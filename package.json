@@ -1,0 +1,17 @@
+{
+  "name": "poeticpandas",
+  "version": "0.0.1",
+  "author": "kimmy33 <kimmy33@gmail.com>",
+  "description": "Hackathon Olympic",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "dependencies": {
+    "express": "~4.13.4",
+    "mongodb": "~2.1.3"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "poeticpandas",
+  "version": "0.0.1",
+  "main": [],
+  "ignore": [
+    "app/",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": "~1.3.0"
+  }
+}
