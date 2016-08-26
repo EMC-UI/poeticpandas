@@ -1,0 +1,19 @@
+{
+  "total": 2,
+  "teams": [
+    {
+      "_id": {
+        "$oid": "52cdef7c4bab8bd675297d82"
+      },
+      "name": "Poetic Pandas",
+      "weighPoint": 100
+    },
+    {
+      "_id": {
+        "$oid": "52cdef7c4bab8bd675297d83"
+      },
+      "name": "tolly",
+      "weighPoint": 90
+    }
+  ]
+}
