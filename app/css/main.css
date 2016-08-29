@@ -2,14 +2,12 @@
     height: 100vh;
     width: 100vw;
     position: relative;
-    border: 1px solid #4a4c4d;
     display: flex;
     flex-direction: column;
 }
 .header-content {
     padding: 0;
     background: #2C95DD;
-    height: 4.5rem;
 }
 .header-content h1 {
     font-weight: 200;
@@ -23,7 +21,6 @@
 }
 .left-content {
     flex: 1;
-    border-right:1px solid #4a4c4d;
 }
 
 .center-content {
@@ -42,9 +39,8 @@
  }
  
  .btn-droppable {
- 	width: 140px;
+ 	width: 160px;
  	height: 30px;
- 	padding-left: 4px;
  }
  
  .btn-draggable {
@@ -71,12 +67,12 @@
  	float: left;
  	height: 150px;
  	margin-bottom: 100px;
- 	margin-left: 10px;
 }
 .active{
     background: #4a4c4d;
     opacity: 0.3;
 }
+
 
 .title {
     color: blue;

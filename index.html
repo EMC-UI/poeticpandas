@@ -29,23 +29,27 @@
 </head>
 <body ng-controller="mainCtrl" ng-app="app" class="main-frame">
 
-	<div class="header-content">
-		<div ng-repeat="n in countries" style="float:left;">
-		  		<img src="http://www.geonames.org/flags/x/{{n}}.gif" height="22" width="22"/>
-		</div>
+	<div class="header-content" align="center">
 	
+		<div ng-repeat="n in countries" style="float:left;">
+		  		<img src="http://www.geonames.org/flags/x/{{n}}.gif" height="20" width="20"/>
+		</div>
+		<br>
+		<div>
 		<h1 align="center">Hackathon Olympics</h1>
+		</div>
+		<div ng-repeat="n in countries" style="float:left;">
+		  		<img src="http://www.geonames.org/flags/x/{{n}}.gif" height="20" width="20"/>
+		</div>
 	</div>
+	<br>
 	<div class="body-content">
-		<div class="left-content">
-			<div class="container" 
-				style="text-align: center; width: 160px; padding: 2em;">
+		<div class="left-content" >
 				<div class="btn btn-droppable" ng-repeat="item in playersList" data-drop="true" ng-model='playersList' data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=playersList])'}"
 					jqyoui-droppable="{index: {{$index}}}">
 					<div class="btn btn-info btn-draggable" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="playersList" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}"
 						ng-hide="!item.name">{{item.name}}</div>
 				</div>
-			</div>
 		</div>
 		<div class="center-content">
 			<div class='content'>
