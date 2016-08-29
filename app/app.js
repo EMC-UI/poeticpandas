@@ -23,16 +23,6 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
         $scope.selectedTeam = [];
         $scope.testTeams = ['Poetic Pandas', 'TeamOfFive', 'Other'];
 
-        $scope.optionsList = {
-    			accept: function(dragEl) {
-    				if ($scope.playersList.length >= 2) {
-    					return false;
-    				} else {
-    					return true;
-    				}
-    			}
-    	};
-
         var playersPromise = null, teamsPromise = null;
         this.initialize = function () {
             playersPromise = service.getPlayers();
@@ -46,7 +36,9 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
             $q.when(teamsPromise).then(function(data){
             	$scope.teamsList = data.data.teams;
             	angular.forEach( $scope.teamsList,function(team,index){
-            		$scope[team.id] = [];
+            		
+            		$scope.teamsList[index].players = [];
+            		
             	})
             	console.log(data);
             }, function(responze) {
