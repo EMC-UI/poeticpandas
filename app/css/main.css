@@ -22,13 +22,15 @@
     flex: 1;
 }
 .left-content {
-    flex: 1;
+    flex: none;
     border-right:1px solid #4a4c4d;
+    overflow: auto;
 }
 
 .center-content {
-    flex: 5;
+    flex: 1;
     border-right:1px solid #4a4c4d;
+    overflow: auto;
 }
 
 .right-content {

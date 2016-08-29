@@ -62,10 +62,23 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
                 $scope.showWinner = true;
                 $scope.winner = $scope.selectedTeam[Math.floor(Math.random()*$scope.selectedTeam.length)];
             }, 5000);
-          //  alert( winner + " won!");
+
             $timeout(function(){
                 $scope.showWinner = false;
                 $scope.isCompeting = false;
+
+                var selectedtoRemove = angular.element('.active');
+                console.log('TEAMS:', selectedtoRemove);
+
+                _.each(selectedtoRemove, function(team, i){
+                    console.log('team:', i, team);
+                    angular.element(team).removeClass('active');
+                });
+
+                // selectedtoRemove.forEach(function( toRemove) {
+                //        toRemove.removeClass('active');
+                //    });
+
                 $scope.selectedTeam = [];
             }, 10000);
         };
