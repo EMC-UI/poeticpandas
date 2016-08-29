@@ -6,12 +6,12 @@ var express = require('express'),
 //var peopleMock = require('./mock/people.json');
 //var teamMock = require('./mock/team.json');
 MongoClient.connect('mongodb://pandas.lss.emc.com:27017/pandas', function(err, db) {
-   // assert.equal(null, err);
-   // console.log("Successfully connected to MongoDB.");
+    assert.equal(null, err);
+    console.log("Successfully connected to MongoDB.");
 
     app.get('/players', function(req, res, next) {
        // res.json(peopleMock);
-        var cursor = db.collection('teams').find();
+        var cursor = db.collection('players').find();
         var numMatches = 0;
         var data = {};
         data.players = [];
