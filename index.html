@@ -49,8 +49,8 @@
 						<li ng-repeat="team in teamsList" class="span3" style='margin-left: 10px;'>
 							<div class="thumbnail" data-drop="true"  ng-model='team.players'
 								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=team.players])'}"
-								jqyoui-droppable="{multiple:true}">
-								<label>{{team.name}}</label>
+								jqyoui-droppable="{multiple:true}" id="{{team.id}}" ng-click="selecedItem(team.id)">
+								<label class="title">{{team.name}}</label>
 								<div class="caption">
 									<div class="btn btn-info btn-draggable"
 										ng-repeat="player in team.players" ng-show="player.name"
@@ -70,6 +70,9 @@
 		<!-- <div class="right-content"></div> -->
 		<!-- For notifications implement later -->
 	</div>
+   <div class="game {{theSport}}" ng-class="{'competing':isCompeting}">
 
+	   <div class="winner" ng-class="{'showWinner': showWinner}">{{winner}} wins {{theSport}}</div>
+   </div>
 </body>
 </html>
