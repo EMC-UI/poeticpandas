@@ -1,38 +1,38 @@
-{
+[
     {
-      "id": "1",
+      "id": "0",
       "name": "100 Meter Hurdles"
     },
     {
-      "id": "2",
+      "id": "1",
       "name": "Javelin"
     },
     {
-      "id": "3",
+      "id": "2",
       "name": "Shotput"
     },
     {
-      "id": "4",
+      "id": "3",
       "name": "Discus"
     },
     {
-      "id": "5",
+      "id": "4",
       "name": "Hammer Throw"
     },
     {
-      "id": "6",
+      "id": "5",
       "name": "100 Meter Dash"
     },
     {
-      "id": "7",
+      "id": "6",
       "name": "High Jump"
     },
     {
-      "id": "8",
+      "id": "7",
       "name": "Long Jump"
     },
     {
-      "id": "9",
+      "id": "8",
       "name": "Pole Vault"
     }
-}
+]

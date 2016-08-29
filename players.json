@@ -1,27 +1,27 @@
-{
+[
     {
-      "id": "1",
+      "id": "0",
       "name": "Madhu",
       "strength": "1"
     },
     {
-      "id": "2",
+      "id": "1",
       "name": "JinWon",
       "strength": "1"
     },
     {
-      "id": "3",
+      "id": "2",
       "name": "Shyam",
       "strength": "1"
     },
     {
-      "id": "4",
+      "id": "3",
       "name": "Vince",
       "strength": "1"
     },
     {
-      "id": "5",
+      "id": "4",
       "name": "Alan",
       "strength": "1"
     }
-}
+]

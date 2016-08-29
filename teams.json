@@ -1,38 +1,38 @@
-{
+[
     {
-      "id": "1",
+      "id": "0",
       "name": "Poetic Pandas"
     },
     {
-      "id": "2",
+      "id": "1",
       "name": "Caveman"
     },
     {
-      "id": "3",
+      "id": "2",
       "name": "Fantastic Five"
     },
     {
-      "id": "4",
+      "id": "3",
       "name": "Memory Leaks"
     },
     {
-      "id": "5",
+      "id": "4",
       "name": "On Point"
     },
     {
-      "id": "6",
+      "id": "5",
       "name": "Playground"
     },
     {
-      "id": "7",
+      "id": "6",
       "name": "Sapling"
     },
     {
-      "id": "8",
+      "id": "7",
       "name": "SMAG"
     },
     {
-      "id": "9",
+      "id": "8",
       "name": "Suicide Squad"
     }
-}
+]
