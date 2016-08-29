@@ -20,6 +20,8 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
     }])
     .controller('mainCtrl', ['$scope', '$interval', '$q', 'service', function ($scope, $interval, $q, service) {
         var me = this;
+        $scope.selectedTeam = [];
+        $scope.testTeams = ['Poetic Pandas', 'TeamOfFive', 'Other'];
     	$scope.list1 = [];
     	$scope.list2 = [];
     	$scope.list3 = [];
@@ -44,6 +46,14 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
             });
 
         };
+
+        $scope.compete = function () {
+            var winner = {};
+            var winner = $scope.testTeams[Math.floor(Math.random()*$scope.testTeams.length)];
+            alert( winner + " won!");
+
+        };
+
         me.initialize();
 
     }]);
