@@ -20,6 +20,9 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
     }])
     .controller('mainCtrl', ['$scope', '$interval', '$timeout', '$q', 'service', function ($scope, $interval, $timeout, $q, service) {
         var me = this;
+        
+        $scope.countries = ["ad","ar","at","au","ax","bd","be","bg","br","ca","ch","cz","de","dk","do","dz","es","fi","fo","fr","gb","gf","gl","gp","gt","hr","hu","ie","in","is","it","jp","li","lk","lt","lu","mc","md","mk","mq","mt","mx","my","nl","no","nz","ph","pk","pl","pm","pt","re","ro","ru","se","si","sk","sm","th","tr","us","va","wf","yt","za","gr"];
+        var geonamesUserIpCountryCode='US';
 
         $scope.winner = false;
         $scope.showWinner = null;

@@ -28,8 +28,13 @@
 
 </head>
 <body ng-controller="mainCtrl" ng-app="app" class="main-frame">
+
 	<div class="header-content">
-		<h1>Hackathon Olympics</h1>
+		<div ng-repeat="n in countries" style="float:left;">
+		  		<img src="http://www.geonames.org/flags/x/{{n}}.gif" height="22" width="22"/>
+		</div>
+	
+		<h1 align="center">Hackathon Olympics</h1>
 	</div>
 	<div class="body-content">
 		<div class="left-content">
