@@ -18,13 +18,18 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
             getTeams : getTeams
         };
     }])
-    .controller('mainCtrl', ['$scope', '$interval', '$q', 'service', function ($scope, $interval, $q, service) {
+    .controller('mainCtrl', ['$scope', '$interval', '$parse','$q', 'service', function ($scope, $interval, $parse, $q, service) {
         var me = this;
-    	$scope.list1 = [];
-    	$scope.list2 = [];
-    	$scope.list3 = [];
-    	$scope.list4 = [];
-    	$scope.list5 = [];
+        
+        $scope.optionsList = {
+    			accept: function(dragEl) {
+    				if ($scope.playersList.length >= 2) {
+    					return false;
+    				} else {
+    					return true;
+    				}
+    			}
+    	};
 
         var playersPromise = null, teamsPromise = null;
         this.initialize = function () {
@@ -36,8 +41,15 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
                 console.log('error');
             });
             teamsPromise = service.getTeams();
-            $q.when(playersPromise).then(function(data){
-            	$scope.teamsList = data;
+            $q.when(teamsPromise).then(function(data){
+            	$scope.teamsList = data.data.teams;
+            	
+            	angular.forEach( $scope.teamsList,function(team,index){
+            			
+            		$scope[team.id] = [];
+            		
+                })
+            	
                 console.log(data);
             }, function(responze) {
                 console.log('error');
