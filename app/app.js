@@ -62,6 +62,23 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
 
         };
 
+        $scope.selecedItem = function(id) {
+            var aTeam = angular.element('#' + id);
+            var find = _.find($scope.selectedTeam, function(data) {
+                return data.id == id;
+            });
+            if (find) {
+                aTeam.removeClass('active');
+                $scope.selectedTeam = _.reject($scope.selectedTeam, function(data){ return data.id == id });
+            } else {
+                aTeam.addClass('active');
+                $scope.selectedTeam.push(_.find($scope.teamsList, function(data) {
+                    return data.id == id;
+                }));
+            }
+
+        };
+
         me.initialize();
 
     }]);

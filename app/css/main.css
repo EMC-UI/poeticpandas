@@ -74,3 +74,11 @@
  	margin-bottom: 100px;
  	margin-left: 10px;
 }
+.active{
+    background: #4a4c4d;
+    opacity: 0.3;
+}
+
+.title {
+    color: blue;
+}
