@@ -5,15 +5,15 @@ var express = require('express'),
 
 var peopleMock = require('./mock/people.json');
 var teamMock = require('./mock/team.json');
-//MongoClient.connect('mongodb://localhost:27017/poeticpandas', function(err, db) {
-    //assert.equal(null, err);
-    //console.log("Successfully connected to MongoDB.");
+//MongoClient.connect('mongodb://pandas.lss.emc.com:27017/poeticpandas', function(err, db) {
+   // assert.equal(null, err);
+   // console.log("Successfully connected to MongoDB.");
 
-    app.get('/people', function(req, res, next) {
+    app.get('/players', function(req, res, next) {
         res.json(peopleMock);
     });
 
-    app.get('/team', function(req, res, next) {
+    app.get('/teams', function(req, res, next) {
         res.json(teamMock);
     });
 //});
