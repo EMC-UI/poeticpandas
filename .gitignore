@@ -1,0 +1,32 @@
+node_modules
+public
+.tmp
+.sass-cache
+bower_components
+client/bower_components
+dist
+.idea
+npm-debug.log
+.DS_Store
+.idea/
+client/app/locales/emclogin*
+client/app/locales/emcui*
+client/app/images
+client/app/fonts
+client/app/locales
+client/app/styles/emc-ui-bootstrap.css
+coverage
+client/app/styles/app.css
+client/app/styles/app.css.map
+ui.log
+ui*.log
+#maven list
+node
+.repository/
+.external-resources/
+target/
+.project
+#eclipse list
+.project
+.settings/
+release/
