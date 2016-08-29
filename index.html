@@ -22,46 +22,6 @@
 	href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css"
 	rel="stylesheet">
 <script src="app/js/angular-dragdrop.min.js"></script>
-<style>
-.thumbnail {
-	height: 200px !important;
-	width: 200px;
-}
-
-.btn-droppable {
-	width: 140px;
-	height: 30px;
-	padding-left: 4px;
-}
-
-.btn-draggable {
-	width: 120px;
-}
-
-.span3 {
-	padding: 2em;
-}
-
-p {clear: both; float: left;}
-
-#droppableContainers
-{
-    clear: both;
-    float: left;
-    margin-bottom: 10px;
-    width: 1000px;
-}
-
-#droppableContainers li
-{
-    float: left;
-    height: 150px;
-    margin-bottom: 100px;
-    margin-left: 10px;
-}
-
-
-</style>
 
 <!-- <div class='contentWrapper ng-cloak'></div>
  -->
@@ -77,7 +37,7 @@ p {clear: both; float: left;}
 				style="text-align: center; width: 160px; padding: 2em;">
 				<div class="btn btn-droppable" ng-repeat="item in playersList"
 					data-drop="true" ng-model='playersList'
-					data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=playersList])'}"
+					data-jqyoui-options="optionsList"
 					jqyoui-droppable="{index: {{$index}}}">
 					<div class="btn btn-info btn-draggable" data-drag="true"
 						data-jqyoui-options="{revert: 'invalid'}" ng-model="playersList"
@@ -90,70 +50,19 @@ p {clear: both; float: left;}
 			<div class='content'>
 				<div class="row-fluid">
 					<ul id="droppableContainers" class="thumbnails">
-						<li class="span3" style='margin-left: 10px;'>
-							<button type="button" ng-click="selectTeam()" ><div class="thumbnail" data-drop="true" ng-model='list1'
-								data-jqyoui-options="optionsList1"
+						<li ng-repeat="team in teamsList" class="span3" style='margin-left: 10px;'>
+							<div class="thumbnail" data-drop="true"  ng-model='team.id'
+								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=team.id])'}"
 								jqyoui-droppable="{multiple:true}">
+								<label>{{team.name}}</label>
 								<div class="caption">
 									<div class="btn btn-info btn-draggable"
-										ng-repeat="item in list1" ng-show="item.name"
-										data-drag="true"
-										data-jqyoui-options="{revert: 'invalid'}" ng-model="list1"
-										jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
+										ng-repeat="player in team" ng-show="player.name"
+										data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+										ng-model='team.id'
+										jqyoui-draggable="{index: {{$index}},animate:true}">{{player.name}}</div>
 								</div>
-							</div></button>
-						</li>
-						<li class="span3" style='margin-left: 10px;'>
-							<button type="button" ng-click="selectTeam('list2')"><div class="thumbnail" data-drop="true" ng-model='list2'
-								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list2])'}"
-								jqyoui-droppable="{multiple:true}">
-								<div class="caption">
-									<div class="btn btn-info btn-draggable"
-										ng-repeat="item in list2" ng-show="item.name"
-										data-drag="true"
-										data-jqyoui-options="{revert: 'invalid'}" ng-model="list2"
-										jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
-								</div>
-							</div></button>
-						</li>
-						<li class="span3" style='margin-left: 10px;'>
-							<button type="button" ng-click="selectTeam('list3')"><div class="thumbnail" data-drop="true" ng-model='list3'
-								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list3])'}"
-								jqyoui-droppable="{multiple:true}">
-								<div class="caption">
-									<div class="btn btn-info btn-draggable"
-										ng-repeat="item in list3" ng-show="item.name"
-										data-drag="true"
-										data-jqyoui-options="{revert: 'invalid'}" ng-model="list3"
-										jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
-								</div>
-							</div></button>
-						</li>
-						<li class="span3" style='margin-left: 10px;'>
-							<button type="button" ng-click="selectTeam('list4')"><div class="thumbnail" data-drop="true" ng-model='list4'
-								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list4])'}"
-								jqyoui-droppable="{multiple:true}">
-								<div class="caption">
-									<div class="btn btn-info btn-draggable"
-										ng-repeat="item in list4" ng-show="item.name"
-										data-drag="true"
-										data-jqyoui-options="{revert: 'invalid'}" ng-model="list4"
-										jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
-								</div>
-							</div></button>
-						</li>
-						<li class="span3" style='margin-left: 10px;'>
-							<button type="button" ng-click="selectTeam('list5')"><div class="thumbnail" data-drop="true" ng-model='list5'
-								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list5])'}"
-								jqyoui-droppable="{multiple:true}">
-								<div class="caption">
-									<div class="btn btn-info btn-draggable"
-										ng-repeat="item in list5" ng-show="item.name"
-										data-drag="true"
-										data-jqyoui-options="{revert: 'invalid'}" ng-model="list5"
-										jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
-								</div>
-							</div></button>
+							</div>
 						</li>
 					</ul>
 					<div><button type="button" style="display: block; margin: 0 auto;" ng-click="compete()">Compete!</button></div>
