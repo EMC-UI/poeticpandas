@@ -1,19 +1,40 @@
 {
-  "total": 2,
+  "total": 5,
   "people": [
     {
       "_id": {
         "$oid": "52cdef7c4bab8bd675297d8a"
       },
       "name": "JinWon",
-      "weighPoint": 100
+      "strength": 3
     },
     {
       "_id": {
         "$oid": "52cdef7c4bab8bd675297d81"
       },
       "name": "Shyam",
-      "weighPoint": 100
+      "strength": 3
+    },
+    {
+      "_id": {
+        "$oid": "52cdef7c4bab8bd675297d81"
+      },
+      "name": "Madhu",
+      "strength": 3
+    },
+    {
+      "_id": {
+        "$oid": "52cdef7c4bab8bd675297d81"
+      },
+      "name": "Alan",
+      "strength": 3
+    },
+    {
+      "_id": {
+        "$oid": "52cdef7c4bab8bd675297d81"
+      },
+      "name": "Vincent",
+      "strength": 3
     }
   ]
 }
