@@ -60,14 +60,14 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
             var winner = {};
             $timeout(function(){
                 $scope.showWinner = true;
-                $scope.winner = $scope.testTeams[Math.floor(Math.random()*$scope.testTeams.length)];
-               //  $scope.winner = $scope.teamsList[Math.floor(Math.random()*$scope.teamsList.length)];
+                $scope.winner = $scope.selectedTeam[Math.floor(Math.random()*$scope.selectedTeam.length)];
             }, 5000);
           //  alert( winner + " won!");
             $timeout(function(){
                 $scope.showWinner = false;
-                $scope.isCompeteing = false;
-            }, 7000);
+                $scope.isCompeting = false;
+                $scope.selectedTeam = [];
+            }, 10000);
         };
 
         $scope.selecedItem = function(id) {
