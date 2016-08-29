@@ -1,23 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="app/css/main.css">
-    <meta charset="UTF-8">
-    <title>Hackathon Olympic</title>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-    <script src="app/app.js"></script>
+<link rel="stylesheet" href="app/css/main.css">
+<meta charset="UTF-8">
+<title>Hackathon Olympic</title>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="app/app.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+<link
+	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css"
+	rel="stylesheet">
+<script src="app/js/angular-dragdrop.min.js"></script>
+<style>
+.thumbnail {
+	height: 200px !important;
+	width: 200px;
+}
+
+.btn-droppable {
+	width: 140px;
+	height: 30px;
+	padding-left: 4px;
+}
+
+.btn-draggable {
+	width: 120px;
+}
+
+.span3 {
+	padding: 2em;
+}
+
+p {clear: both; float: left;}
+
+#droppableContainers
+{
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+    width: 1000px;
+}
+
+#droppableContainers li
+{
+    float: left;
+    height: 150px;
+    margin-bottom: 100px;
+    margin-left: 10px;
+}
+
+
+</style>
+
+<!-- <div class='contentWrapper ng-cloak'></div>
+ -->
+
 </head>
 <body ng-controller="mainCtrl" ng-app="app" class="main-frame">
-    <div class="header-content">
-        <h1>Hackathon Olympics</h1>
-    </div>
-    <div class="body-content">
-        <div class="left-content"></div>
-        <div class="center-content"></div>
-        <div class="right-content"></div>
-    </div>
+	<div class="header-content">
+		<h1>Hackathon Olympics</h1>
+	</div>
+	<div class="body-content">
+		<div class="left-content">
+			<div class="container" 
+				style="text-align: center; width: 160px; padding: 2em;">
+				<div class="btn btn-droppable" ng-repeat="item in playersList"
+					data-drop="true" ng-model='playersList'
+					data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=playersList])'}"
+					jqyoui-droppable="{index: {{$index}}}">
+					<div class="btn btn-info btn-draggable" data-drag="true"
+						data-jqyoui-options="{revert: 'invalid'}" ng-model="playersList"
+						jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}"
+						ng-hide="!item.name">{{item.name}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="center-content">
+			<div class='content'>
+				<div class="row-fluid">
+					<ul id="droppableContainers" class="thumbnails">
+						<li class="span3" style='margin-left: 10px;'>
+							<div class="thumbnail" data-drop="true" ng-model='list1'
+								data-jqyoui-options="optionsList1"
+								jqyoui-droppable="{multiple:true}">
+								<div class="caption">
+									<div class="btn btn-info btn-draggable"
+										ng-repeat="item in list1" ng-show="item.name"
+										data-drag="true"
+										data-jqyoui-options="{revert: 'invalid'}" ng-model="list1"
+										jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
+								</div>
+							</div>
+						</li>
+						<li class="span3" style='margin-left: 10px;'>
+							<div class="thumbnail" data-drop="true" ng-model='list2'
+								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list2])'}"
+								jqyoui-droppable="{multiple:true}">
+								<div class="caption">
+									<div class="btn btn-info btn-draggable"
+										ng-repeat="item in list2" ng-show="item.name"
+										data-drag="true"
+										data-jqyoui-options="{revert: 'invalid'}" ng-model="list2"
+										jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
+								</div>
+							</div>
+						</li>
+						<li class="span3" style='margin-left: 10px;'>
+							<div class="thumbnail" data-drop="true" ng-model='list3'
+								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list3])'}"
+								jqyoui-droppable="{multiple:true}">
+								<div class="caption">
+									<div class="btn btn-info btn-draggable"
+										ng-repeat="item in list3" ng-show="item.name"
+										data-drag="true"
+										data-jqyoui-options="{revert: 'invalid'}" ng-model="list3"
+										jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
+								</div>
+							</div>
+						</li>
+						<li class="span3" style='margin-left: 10px;'>
+							<div class="thumbnail" data-drop="true" ng-model='list4'
+								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list4])'}"
+								jqyoui-droppable="{multiple:true}">
+								<div class="caption">
+									<div class="btn btn-info btn-draggable"
+										ng-repeat="item in list4" ng-show="item.name"
+										data-drag="true"
+										data-jqyoui-options="{revert: 'invalid'}" ng-model="list4"
+										jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
+								</div>
+							</div>
+						</li>
+						<li class="span3" style='margin-left: 10px;'>
+							<div class="thumbnail" data-drop="true" ng-model='list5'
+								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=list5])'}"
+								jqyoui-droppable="{multiple:true}">
+								<div class="caption">
+									<div class="btn btn-info btn-draggable"
+										ng-repeat="item in list5" ng-show="item.name"
+										data-drag="true"
+										data-jqyoui-options="{revert: 'invalid'}" ng-model="list5"
+										jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+		</div>
+		<!-- <div class="right-content"></div> -->
+		<!-- For notifications implement later -->
+	</div>
 
 </body>
 </html>
