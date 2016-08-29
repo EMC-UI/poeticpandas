@@ -34,6 +34,54 @@
 .right-content {
     flex: 1;
 }
+ 
+ 
+ .thumbnail {
+ 	height: 200px !important;
+ 	width: 200px;
+ }
+ 
+ .btn-droppable {
+ 	width: 140px;
+ 	height: 30px;
+ 	padding-left: 4px;
+ }
+ 
+ .btn-draggable {
+ 	width: 120px;
+ }
+ 
+ .span3 {
+ 	padding: 2em;
+ }
+ 
+ p {
+ 	clear: both;
+ 	float: left;
+ }
+ 
+ #droppableContainers {
+ 	clear: both;
+ 	float: left;
+ 	margin-bottom: 10px;
+ 	width: 1000px;
+ }
+ 
+ #droppableContainers li {
+ 	float: left;
+ 	height: 150px;
+ 	margin-bottom: 100px;
+ 	margin-left: 10px;
+}
+.active{
+    background: #4a4c4d;
+    opacity: 0.3;
+}
+
+.title {
+    color: blue;
+}
+
 .game {
     position: absolute;
     top: 50%;
@@ -90,4 +138,3 @@
 .winner.showWinner {
     opacity: 1;
 }
-
