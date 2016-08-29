@@ -34,3 +34,60 @@
 .right-content {
     flex: 1;
 }
+.game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 500px;
+    height: 300px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    background: #fff;
+    border: 2px solid;
+}
+
+.game.competing {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.swimming {
+    background-image: url(/app/img/swimming.jpeg);
+    background-size: cover;
+}
+
+.track {
+    background-image: url(/app/img/track.jpeg);
+    background-size: cover;
+}
+
+.fencing {
+    background-image: url(/app/img/fencing.jpeg);
+    background-size: cover;
+}
+.gymnastics {
+    background-image: url(/app/img/gymnastics.jpeg);
+    background-size: cover;
+}
+.weightlifting {
+    background-image: url(/app/img/weightlifting.jpeg);
+    background-size: cover;
+}
+
+
+.winner {
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+.winner.showWinner {
+    opacity: 1;
+}
+

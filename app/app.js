@@ -18,10 +18,14 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
             getTeams : getTeams
         };
     }])
-    .controller('mainCtrl', ['$scope', '$interval', '$q', 'service', function ($scope, $interval, $q, service) {
+    .controller('mainCtrl', ['$scope', '$interval', '$timeout', '$q', 'service', function ($scope, $interval, $timeout, $q, service) {
         var me = this;
-        $scope.selectedTeam = [];
-        $scope.testTeams = ['Poetic Pandas', 'TeamOfFive', 'Other'];
+        $scope.winner = false;
+        $scope.showWinner = null;
+        $scope.isCompeting = false;
+        $scope.selectedTeam = []
+        $scope.sports = ['track', 'gymnastics', 'weightlifting', 'swimming', 'fencing'];
+        $scope.testTeams = ['Poetic Pandas', 'TeamOfFive', 'Suicide Squad', 'On Point', 'Memory Leaks', 'Fantastic Five', 'Caveman', 'SMAG', 'Playground'];
     	$scope.list1 = [];
     	$scope.list2 = [];
     	$scope.list3 = [];
@@ -48,10 +52,21 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
         };
 
         $scope.compete = function () {
-            var winner = {};
-            var winner = $scope.testTeams[Math.floor(Math.random()*$scope.testTeams.length)];
-            alert( winner + " won!");
+            $scope.isCompeting = true;
 
+            $scope.theSport = $scope.sports[Math.floor(Math.random()*$scope.sports.length)];
+
+            var winner = {};
+            $timeout(function(){
+                $scope.showWinner = true;
+                $scope.winner = $scope.testTeams[Math.floor(Math.random()*$scope.testTeams.length)];
+               //  $scope.winner = $scope.teamsList[Math.floor(Math.random()*$scope.teamsList.length)];
+            }, 5000);
+          //  alert( winner + " won!");
+            $timeout(function(){
+                $scope.showWinner = false;
+                $scope.isCompeteing = false;
+            }, 7000);
         };
 
         me.initialize();

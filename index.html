@@ -165,6 +165,9 @@ p {clear: both; float: left;}
 		<!-- <div class="right-content"></div> -->
 		<!-- For notifications implement later -->
 	</div>
+   <div class="game {{theSport}}" ng-class="{'competing':isCompeting}">
 
+	   <div class="winner" ng-class="{'showWinner': showWinner}">{{winner}} wins {{theSport}}</div>
+   </div>
 </body>
 </html>
