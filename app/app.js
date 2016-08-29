@@ -30,7 +30,7 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
         this.initialize = function () {
             playersPromise = service.getPlayers();
             $q.when(playersPromise).then(function(data){
-            	$scope.playersList = data.data.people;
+            	$scope.playersList = data.data.players;
                 console.log(data);
             }, function(responze) {
                 console.log('error');
