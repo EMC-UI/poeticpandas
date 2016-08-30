@@ -54,8 +54,9 @@
 		</div>
 		<div class="center-content">
 			<div class="center-team">
+				<div class="center-button"><button type="button" ng-show="selectedTeam.length > 1" ng-click="compete()">Compete!</button> </div>
 				<div id="droppableContainers">
-					<div ng-repeat="team in teamsList">
+					<div ng-repeat="team in teamsList" class="thumb-paddings">
 						<div class="thumbnail" data-drop="true"  ng-model='team.players'
 							data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=team.players])'}"
 							jqyoui-droppable="{multiple:true}" id="{{team.id}}" ng-click="selecedItem(team.id)">
@@ -72,24 +73,19 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="bottom-content">
-							<div ng-repeat="team in eliminatedTeams" ng-model='eliminatedTeams' class="span3" style='margin-left: 10px;'>
-								<div class="thumbnail"  ng-model='team.players'>
-									<label class="title">{{team.name}}</label>
-									<div class="caption">
-										<div class="btn btn-info btn-draggable"
-											 ng-repeat="player in team.players" ng-show="player.name"
-											 ng-model='team.players'>{{player.name}}</div>
-									</div>
+					<div ng-repeat="team in eliminatedTeams" class="thumb-paddings">
+						<div class="thumbnail" ng-model='team.players'>
+							<label class="title">{{team.name}} -  Win : {{team.wins}}</label>
+							<div class="caption">
+								<div class="btn btn-info"
+									 ng-repeat="player in team.players" ng-show="player.name"
+									 ng-model='team.players'>{{player.name}}
 								</div>
 							</div>
-
+						</div>
+					</div>
 			</div>
-				<div><button type="button" style="display: block; margin: 0 auto;" ng-show="selectedTeam.length > 1" ng-click="compete()">Compete!</button> </div>
-
-			</div>
-		 	<div class="bottom-team"></div>
 		</div>
    <div class="game {{theSport}}" ng-class="{'competing':isCompeting}">
 
