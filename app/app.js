@@ -88,6 +88,12 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
 
         $scope.selecedItem = function(id) {
             var aTeam = angular.element('#' + id);
+            if (!aTeam && !aTeam[0] && !aTeam[0].children[1]) {return;}
+            if (aTeam[0].children[1].children.length == 0 ) {
+                // message box
+                alert("Hello! Please Drag and Drop the players into Team!!");
+                return;
+            }
             var find = _.find($scope.selectedTeam, function(data) {
                 return data.id == id;
             });
