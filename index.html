@@ -70,7 +70,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="bottom-content">
+			<div> <div ng-show="eliminatedTeams.length > 0">Eliminated teams</div>
+				<div class="bottom-content">
 					<div ng-repeat="team in eliminatedTeams" class="thumb-paddings">
 						<div class="thumbnail" ng-model='team.players'>
 							<label class="title">{{team.name}} -  Win : {{team.wins}}</label>
@@ -82,6 +83,7 @@
 							</div>
 						</div>
 					</div>
+				</div>
 			</div>
 		</div>
    <div class="game {{theSport}}" ng-class="{'competing':isCompeting}">
