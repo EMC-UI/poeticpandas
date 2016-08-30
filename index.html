@@ -93,9 +93,7 @@
    </div>
 
 	<div class="closingCeremony awardmedals" ng-class="{'medals':readyForMedals}">
-		<div class="finals" ng-class="{'showMedals': showMedals}">{{teamsList[0].name}} wins the GOLD</div>
-		<div class="ne-audio" ng-if="showMedals">
-			<audio ng-src="/app/img/theme.mpg" controls></audio>
+		<div class="finals" ng-class="{'showMedals': showMedals}">Team {{teamsList[0].name}} wins!! {{teamsList[0].players[0].name}} gets the GOLD</div>
 		</div>
 	</div>
 
