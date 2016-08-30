@@ -140,6 +140,7 @@
 
 
 .winner {
+    font-weight:bold;
     background: #fff;
     position: absolute;
     top: 50%;
