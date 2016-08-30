@@ -113,7 +113,7 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
             $timeout( function(){
                 // the one team remaining gets the GOLD
                 if ($scope.teamsList.length == 1) {
-                    console.log('ready for closing ceremony')
+                    //console.log('ready for closing ceremony')
                     $scope.readyForMedals = true;
                     $scope.showMedals = true;
 
