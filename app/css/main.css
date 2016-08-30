@@ -40,8 +40,13 @@
     margin-right: auto;
 }
 .bottom-content {
+    background: #f2f2f2;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    flex-wrap: wrap;
     height: 200px;
-    border-top: 1px solid black;
 }
 
 .thumb-paddings {

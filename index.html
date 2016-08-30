@@ -25,14 +25,12 @@
 <body ng-controller="mainCtrl" ng-app="app" class="main-frame">
 
 	<div class="header-content" align="center">
-	
+
 		<div ng-repeat="n in countries" style="float:left;">
 		  		<img src="http://www.geonames.org/flags/x/{{n}}.gif" height="20" width="20"/>
 		</div>
 		<br>
-		<div>
 		<h1 align="center">Hackathon Olympics</h1>
-		</div>
 		<div ng-repeat="n in countries" style="float:left;">
 		  		<img src="http://www.geonames.org/flags/x/{{n}}.gif" height="20" width="20"/>
 		</div>
@@ -53,8 +51,8 @@
 
 		</div>
 		<div class="center-content">
+			<div class="center-button"><button type="button" ng-show="selectedTeam.length > 1" ng-click="compete()">Compete!</button> </div>
 			<div class="center-team">
-				<div class="center-button"><button type="button" ng-show="selectedTeam.length > 1" ng-click="compete()">Compete!</button> </div>
 				<div id="droppableContainers">
 					<div ng-repeat="team in teamsList" class="thumb-paddings">
 						<div class="thumbnail" data-drop="true"  ng-model='team.players'
@@ -73,7 +71,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="bottom-content">
+			<div ng-show="eliminatedTeams.length > 0">
+				Eliminated teams
+				<div class="bottom-content">
 					<div ng-repeat="team in eliminatedTeams" class="thumb-paddings">
 						<div class="thumbnail" ng-model='team.players'>
 							<label class="title">{{team.name}} -  Win : {{team.wins}}</label>
@@ -85,6 +85,7 @@
 							</div>
 						</div>
 					</div>
+				</div>
 			</div>
 		</div>
    <div class="game {{theSport}}" ng-class="{'competing':isCompeting}">
