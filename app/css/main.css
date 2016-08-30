@@ -32,7 +32,10 @@
 .right-content {
     flex: 1;
 }
- 
+
+.bottom-content {
+    width: 600px;
+}
  
  .thumbnail {
  	height: 200px !important;

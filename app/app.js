@@ -27,9 +27,10 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
         $scope.winner = false;
         $scope.showWinner = null;
         $scope.isCompeting = false;
-        $scope.selectedTeam = []
+        $scope.selectedTeam = [];
+        $scope.eliminatedTeams = [];
         $scope.sports = ['track', 'gymnastics', 'weightlifting', 'swimming', 'fencing'];
-        $scope.testTeams = ['Poetic Pandas', 'TeamOfFive', 'Suicide Squad', 'On Point', 'Memory Leaks', 'Fantastic Five', 'Caveman', 'SMAG', 'Playground'];
+        //$scope.testTeams = ['Poetic Pandas', 'TeamOfFive', 'Suicide Squad', 'On Point', 'Memory Leaks', 'Fantastic Five', 'Caveman', 'SMAG', 'Playground'];
 
         var playersPromise = null, teamsPromise = null;
         this.initialize = function () {
@@ -71,14 +72,31 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
                 $scope.isCompeting = false;
 
                 var selectedtoRemove = angular.element('.active');
-                console.log('TEAMS:', selectedtoRemove);
+                //console.log('TEAMS:', selectedtoRemove);
 
                 _.each(selectedtoRemove, function(team, i){
-                    console.log('team:', i, team);
+                   // console.log('team:', i, team);
+                    // $scope.eliminatedTeams.push(team);
                     angular.element(team).removeClass('active');
                 });
 
-                // selectedtoRemove.forEach(function( toRemove) {
+                console.log("winner is = " + $scope.winner.name);
+
+                var eliminated  = _.reject($scope.selectedTeam, function(team) { return team.name === $scope.winner.name; });
+                console.log('eliminated: ', eliminated);
+
+                $scope.eliminatedTeams.push(eliminated);
+
+                // then remove eliminated from teamslist
+
+                $scope.remaining = _.difference($scope.teamsList,eliminated);
+                console.log($scope.remaining);
+                $scope.teamsList = $scope.remaining;
+                var winnerIndex = _.findIndex($scope.teamsList, function (t) { return t.name === $scope.winner.name;});
+                $scope.teamsList[winnerIndex].wins = parseInt($scope.teamsList[winnerIndex].wins) + 1;
+                console.log('wins after =', $scope.teamsList[winnerIndex].wins);
+
+                        // selectedtoRemove.forEach(function( toRemove) {
                 //        toRemove.removeClass('active');
                 //    });
 
