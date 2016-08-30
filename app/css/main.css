@@ -46,6 +46,7 @@
     flex-direction: row;
     overflow: auto;
     flex-wrap: wrap;
+    height: 200px;
 }
 
 .thumb-paddings {
