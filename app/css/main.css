@@ -34,6 +34,7 @@
     flex-direction: row;
     overflow: auto;
     flex-wrap: wrap;
+    flex: 1;
 }
 .center-button {
     margin-left: auto;
