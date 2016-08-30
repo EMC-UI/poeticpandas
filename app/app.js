@@ -27,6 +27,8 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
         $scope.winner = false;
         $scope.showWinner = null;
         $scope.isCompeting = false;
+        $scope.readyForMedals = false;
+        $scope.showRankings = null;
         $scope.selectedTeam = [];
         $scope.eliminatedTeams = [];
         $scope.sports = ['track', 'gymnastics', 'weightlifting', 'swimming', 'fencing'];
@@ -70,6 +72,7 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
             $timeout(function(){
                 $scope.showWinner = false;
                 $scope.isCompeting = false;
+                $scope.readyForMedals = false;
 
                 var selectedtoRemove = angular.element('.active');
                 //console.log('TEAMS:', selectedtoRemove);
@@ -101,6 +104,17 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
                 //    });
 
                 $scope.selectedTeam = [];
+
+                // the one team remaining gets the GOLD
+                if ($scope.teamsList.length == 1) {
+                    $scope.readyForMedals = true;
+                    $timeout(function(){
+                        $scope.showMedals = true;
+                    }, 5000);
+
+
+                }
+
             }, 10000);
         };
 
