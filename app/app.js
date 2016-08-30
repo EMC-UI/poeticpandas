@@ -116,10 +116,12 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
                     console.log('ready for closing ceremony')
                     $scope.readyForMedals = true;
                     $scope.showMedals = true;
-                    $('#olympic_theme').html(
-                        "<embed src='"+/app/img/theme.mp3+"' hidden=true autostart=true loop=false>");
+
+                    var audio = new Audio('/app/img/theme.mpg3');
+                    audio.play();
+
                     }
-                }, 12000);
+                }, 11000);
 
         };
 
