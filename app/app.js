@@ -107,17 +107,20 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
 
                 $scope.selectedTeam = [];
 
-                // the one team remaining gets the GOLD
-                if ($scope.teamsList.length == 1) {
-                    $scope.readyForMedals = true;
-                    $timeout(function(){
-                        $scope.showMedals = true;
-                    }, 5000);
-
-
-                }
 
             }, 10000);
+
+            $timeout( function(){
+                // the one team remaining gets the GOLD
+                if ($scope.teamsList.length == 1) {
+                    console.log('ready for closing ceremony')
+                    $scope.readyForMedals = true;
+                    $scope.showMedals = true;
+                    $('#olympic_theme').html(
+                        "<embed src='"+/app/img/theme.mp3+"' hidden=true autostart=true loop=false>");
+                    }
+                }, 12000);
+
         };
 
         $scope.selecedItem = function(id) {
