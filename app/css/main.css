@@ -20,17 +20,23 @@
     flex: 1;
 }
 .left-content {
-  width: 200px;
+    width: 200px;
+
 }
 
 .center-content {
     flex: 1;
-    border-right:1px solid #4a4c4d;
-    overflow: auto;
+    display:flex;
+    flex-direction: column;
 }
-
-.right-content {
-    flex: 1;
+.center-team {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    flex-wrap: wrap;
+}
+.bottom-team {
+    height: 200px;
 }
  
  
@@ -58,16 +64,13 @@
  }
  
  #droppableContainers {
- 	clear: both;
- 	float: left;
- 	margin-bottom: 10px;
- 	width: 1000px;
+     display: flex;
+     flex-wrap: wrap;
  }
  
  #droppableContainers li {
- 	float: left;
  	height: 150px;
- 	margin-bottom: 100px;
+ 	margin: 10px;
 }
 .active{
     background: #4a4c4d;
