@@ -77,7 +77,7 @@
 				<div class="bottom-content">
 					<div ng-repeat="team in eliminatedTeams" class="thumb-paddings">
 						<div class="thumbnail" ng-model='team.players'>
-							<label class="title">{{team.name}} -  Win : {{team.wins}}</label>
+							<label class="title">Team {{team.name}}<br>Wins : {{team.wins}}</label>
 							<div class="caption">
 								<div class="btn btn-info"
 									 ng-repeat="player in team.players" ng-show="player.name"
