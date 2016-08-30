@@ -44,29 +44,28 @@
 				<div class="btn btn-droppable" ng-repeat="item in playersList" data-drop="true" ng-model='playersList' data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=playersList])'}"
 					jqyoui-droppable="{index: {{$index}}}">
 					<div class="btn btn-info btn-draggable" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="playersList" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}"
-						ng-hide="!item.name">{{item.name}}</div>
+						ng-hide="!item.name">{{item.name}}
+					</div>
 				</div>
 		</div>
 		<div class="center-content">
-			<div class='content'>
-				<div class="row-fluid">
-					<ul id="droppableContainers" class="thumbnails">
-						<li ng-repeat="team in teamsList" class="span3" style='margin-left: 10px;'>
-							<div class="thumbnail" data-drop="true"  ng-model='team.players'
-								data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=team.players])'}"
-								jqyoui-droppable="{multiple:true}" id="{{team.id}}" ng-click="selecedItem(team.id)">
-								<label class="title">{{team.name}}</label>
-								<div class="caption">
-									<div class="btn btn-info btn-draggable"
-										ng-repeat="player in team.players" ng-show="player.name"
-										data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
-										ng-model='team.players'
-										jqyoui-draggable="{index: {{$index}},animate:true}">{{player.name}}</div>
+			<div class="center-team">
+				<div id="droppableContainers">
+					<div ng-repeat="team in teamsList">
+						<div class="thumbnail" data-drop="true"  ng-model='team.players'
+							data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=team.players])'}"
+							jqyoui-droppable="{multiple:true}" id="{{team.id}}" ng-click="selecedItem(team.id)">
+							<label class="title">{{team.name}} -  Win : {{team.wins}}</label>
+							<div class="caption">
+								<div class="btn btn-info btn-draggable"
+									ng-repeat="player in team.players" ng-show="player.name"
+									data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+									ng-model='team.players'
+									jqyoui-draggable="{index: {{$index}},animate:true}">{{player.name}}
 								</div>
 							</div>
-						</li>
-					</ul>
-					<div><button type="button" style="display: block; margin: 0 auto;" ng-show="selectedTeam.length > 1" ng-click="compete()">Compete!</button></div>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -83,12 +82,11 @@
 							</div>
 
 			</div>
-				<button type="button" style="display: block; margin: 0 auto;" ng-show="selectedTeam.length > 1" ng-click="compete()">Compete!</button></div>
+				<div><button type="button" style="display: block; margin: 0 auto;" ng-show="selectedTeam.length > 1" ng-click="compete()">Compete!</button> </div>
 
+			</div>
+		 	<div class="bottom-team"></div>
 		</div>
-		<!-- <div class="right-content"></div> -->
-		<!-- For notifications implement later -->
-	</div>
    <div class="game {{theSport}}" ng-class="{'competing':isCompeting}">
 
 	   <div class="winner" ng-class="{'showWinner': showWinner}">{{winner.name}} wins {{theSport}}</div>
