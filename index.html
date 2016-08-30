@@ -46,8 +46,9 @@
 					</div>
 				</div>
 
-			<img style="margin-top: 2px" id="myImg" src="http://www.healthline.com/hlcmsresource/images/diabetesmine/wp-content/uploads/2012/07/olympic-torch.jpg" width ="150" height="100">
-
+		<div style="text-align: center" >
+			<img id="myImg" src="http://www.healthline.com/hlcmsresource/images/diabetesmine/wp-content/uploads/2012/07/olympic-torch.jpg" width ="100" height="75">
+		</div>
 
 		</div>
 		<div class="center-content">
@@ -58,7 +59,7 @@
 						<div class="thumbnail" data-drop="true"  ng-model='team.players'
 							data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=team.players])'}"
 							jqyoui-droppable="{multiple:true}" id="{{team.id}}" ng-click="selecedItem(team.id)">
-							<label class="title">{{team.name}} -  Win : {{team.wins}}</label>
+							<label class="title">{{team.name}} -  Wins : {{team.wins}}</label>
 							<div class="caption">
 								<div class="btn btn-info btn-draggable"
 									ng-repeat="player in team.players" ng-show="player.name"
