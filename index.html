@@ -50,8 +50,8 @@
 
 		</div>
 		<div class="center-content">
+			<div class="center-button"><button type="button" ng-show="selectedTeam.length > 1" ng-click="compete()">Compete!</button> </div>
 			<div class="center-team">
-				<div class="center-button"><button type="button" ng-show="selectedTeam.length > 1" ng-click="compete()">Compete!</button> </div>
 				<div id="droppableContainers">
 					<div ng-repeat="team in teamsList" class="thumb-paddings">
 						<div class="thumbnail" data-drop="true"  ng-model='team.players'
