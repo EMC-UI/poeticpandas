@@ -88,9 +88,9 @@
 	   <div class="winner" ng-class="{'showWinner': showWinner}">{{winner.name}} wins {{theSport}}</div>
    </div>
 
-	<div class="medals" ng-class="{'closingCeremony':readyForMedals}">
+	<div class="closingCeremony" ng-class="{'awardmedals':readyForMedals}" ng-repeat="team in teamList">
 
-		<div class="finals" ng-class="{'showWinner': showMedals}">{{teamList[0].name}} wins the GOLD</div>
+		<div class="finals" ng-class="{'showMedals': showMedals}">{{team.name}} wins the GOLD</div>
 	</div>
 
 
