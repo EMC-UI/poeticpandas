@@ -59,7 +59,7 @@
 						<div class="thumbnail" data-drop="true"  ng-model='team.players'
 							data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=team.players])'}"
 							jqyoui-droppable="{multiple:true}" id="{{team.id}}" ng-click="selecedItem(team.id)">
-							<label class="title">{{team.name}} -  Win : {{team.wins}}</label>
+							<label class="title">{{team.name}} -  Wins : {{team.wins}}</label>
 							<div class="caption">
 								<div class="btn btn-info btn-draggable"
 									ng-repeat="player in team.players" ng-show="player.name"
