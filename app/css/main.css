@@ -38,7 +38,10 @@
 .bottom-team {
     height: 200px;
 }
- 
+
+.bottom-content {
+    width: 600px;
+}
  
  .thumbnail {
  	height: 200px !important;
