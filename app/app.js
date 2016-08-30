@@ -83,9 +83,11 @@ angular.module('app', ['ngMessages', 'ngDragDrop'])
                 console.log("winner is = " + $scope.winner.name);
 
                 var eliminated  = _.reject($scope.selectedTeam, function(team) { return team.name === $scope.winner.name; });
-                console.log('eliminated: ', eliminated);
 
-                $scope.eliminatedTeams.push(eliminated);
+                for (var i in eliminated) {
+                    $scope.eliminatedTeams.push(eliminated[i]);
+                }
+
 
                 // then remove eliminated from teamslist
 
